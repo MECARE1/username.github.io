@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mumbai Local Trains Info</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .content {
+            padding: 20px;
+        }
+        .line-info {
+            background-color: white;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .line-info h2 {
+            color: #4CAF50;
+        }
+        .line-info button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .line-info button:hover {
+            background-color: #45a049;
+        }
+        .map {
+            width: 100%;
+            height: 300px;
+            margin-top: 10px;
+            border: 1px solid #ddd;
+        }
+        .details {
+            display: none;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Mumbai Local Trains Info</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#western-line">Western Line</a></li>
+            <li><a href="#central-line">Central Line</a></li>
+            <li><a href="#harbour-line">Harbour Line</a></li>
+        </ul>
+    </nav>
+    <div class="content">
+        <div class="line-info" id="western-line">
+            <h2>Western Line</h2>
+            <button onclick="toggleDetails('western-details')">View Details</button>
+            <div class="details" id="western-details">
+                <p>The Western Line connects Churchgate to Dahanu Road, serving the southern part of the city to the far northern suburbs.</p>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d188176.37829080777!2d72.80639692365506!3d19.003153200772413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b05a60a48a41%3A0xdb893fe6f34ed94f!2sWestern%20Railway%20Line!5e0!3m2!1sen!2sin!4v1608630914396!5m2!1sen!2sin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="line-info" id="central-line">
+            <h2>Central Line</h2>
+            <button onclick="toggleDetails('central-details')">View Details</button>
+            <div class="details" id="central-details">
+                <p>The Central Line links South Mumbai to the eastern suburbs, connecting CST to Thane.</p>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.7110325377865!2d72.97689871458728!3d19.048201487109393!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8a7779d756b%3A0x35ba8ba4fae2ee94!2sMumbai%20CST%20-%20Thane%20Train%20line!5e0!3m2!1sen!2sin!4v1608631023452!5m2!1sen!2sin" allowfullscreen></iframe>
+            </div>
+        </div>
+        <div class="line-info" id="harbour-line">
+            <h2>Harbour Line</h2>
+            <button onclick="toggleDetails('harbour-details')">View Details</button>
+            <div class="details" id="harbour-details">
+                <p>The Harbour Line connects CST to Navi Mumbai, providing seamless connectivity to areas such as Vashi and Panvel.</p>
+                <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1896.353383446234!2d72.93485543683053!3d19.01550574590373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b8d93ec3f8b5%3A0x689372dcb73f927b!2sMumbai%20Local%20Train%20line%20to%20Navi%20Mumbai!5e0!3m2!1sen!2sin!4v1608631122285!5m2!1sen!2sin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDetails(id) {
+            const details = document.getElementById(id);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
